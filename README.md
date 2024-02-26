@@ -1,4 +1,4 @@
-# React + Vite
+# Todo App with React, Nodejs
 
 Branch - master FrontEnd app, branch - server - Nodejs App
 
