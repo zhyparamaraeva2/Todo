@@ -8,7 +8,6 @@ import path from 'path';
 export default {
 
     roots: [
-        "<rootDir>",
         "./"
     ],
 

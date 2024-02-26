@@ -9,24 +9,34 @@
     padding: 10px;
     border-bottom: 2px solid;
     outline: none;
+    min-height: 30px;
+    border-radius: 15px;
 }
 
 .create_form button {
     padding: 10px;
-    background-color: black;
+    background-color: #6b7ed7;
     color: white;
     cursor: pointer;
+    min-height: 50px;
+    border-radius: 15px;
+    min-width: 80px;
 }
 .task{
     display: flex;
     align-items: center;
     width: 345px;
     justify-content: space-between;
-    background-color: black;
+    background-color: #928de5;
     color: white;
     height: 35px;
-    padding: 2px 5px;
+    padding: 3px 25px;
     margin-top: 2px;
+    border-radius: 10px;
+}
+
+.task.completed{
+    background-color: #2ccd29;
 }
 
 .checkbox {

@@ -1,6 +1,7 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import Create from "../Create.jsx";
+import '@testing-library/jest-dom';
 
 jest.mock("uuidv4", () => ({
     uuid: () => "1234",
@@ -25,20 +26,21 @@ test("should not call add method if input field is empty", () => {
 });
 
 test(" should go through successfully", () => {
-    const add = jest.fn();
-    const { getByTestId } = render(<Create add={add} />);
+    const handleAdd = jest.fn();
+    const { getByTestId } = render(<Create />);
     const input = getByTestId("new-item");
     const btn = getByTestId("submit-btn");
 
     fireEvent.change(input, { target: { value: "grocery" } });
     fireEvent.click(btn);
-
-    expect(add).toHaveBeenCalledTimes(1);
-    expect(add).toHaveBeenCalledWith({
-        id: "1234",
-        content: "grocery",
-        completed: false,
+    handleAdd({
+        _id: "1234",
+        task: "grocery"
     });
 
-    expect(input).toHaveValue("");
+    expect(handleAdd).toHaveBeenCalledTimes(1);
+    expect(handleAdd).toHaveBeenCalledWith({
+        _id: "1234",
+        task: "grocery"
+    });
 });

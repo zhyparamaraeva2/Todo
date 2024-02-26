@@ -1,14 +1,10 @@
-import { useState } from 'react'
 import './App.css'
-import Todo from "./components/Todo.jsx";
-import { Provider } from "react-redux";
-import store from "./redux/store";
+import Todo from "./components/Todo";
+import React from "react";
 
 function App() {
   return (
-      <Provider store={store}>
         <Todo />
-      </Provider>
   )
 }
 

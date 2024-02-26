@@ -1,7 +1,8 @@
+"useClient";
 import React, {useEffect, useState} from 'react';
 import Create from "./Create.jsx";
-import { useSelector, useDispatch } from "react-redux";
-import { addTodo, toggleComplete, deleteTodo } from "../redux/todoSlice.js";
+import { useDispatch } from "react-redux";
+import { toggleComplete, deleteTodo } from "../redux/todoSlice.js";
 
 import axios from "axios";
 import {BsCircleFill, BsFillCheckCircleFill, BsFillTrashFill} from "react-icons/bs";
@@ -32,24 +33,28 @@ function Todo() {
         <div className="home">
             <h2> Todo List</h2>
             <Create />
+            <div className="task-list">
+
             {
-               todos.length ===0  ?
-                   <h2> No Records </h2>
-                   :
-                todos.map((todo) => (
+                    todos.length ===0 ?
+                    <h2> No Records </h2>
+                    :
+                    todos.map((todo) => (
                     <div className="task">
                         <div className="checkbox" onClick={() => handleEdit(todo._id)}>
                             {todo.done
-                                ? <BsFillCheckCircleFill className="icon" />
-                                : <BsCircleFill className="icon" />}
+                                ? <BsFillCheckCircleFill className="icon"/>
+                                : <BsCircleFill className="icon"/>}
                             <p className={todo.done ? "line_through" : ""}>{todo.task}</p>
                         </div>
-                        <div onClick={ () => handleDelete(todo._id)}>
-                            <span><BsFillTrashFill className="icon" /> </span>
+                        <div onClick={() => handleDelete(todo._id)}>
+                            <span><BsFillTrashFill className="icon"/> </span>
                         </div>
                     </div>
-                ))
+                    ))
             }
+            </div>
+
         </div>
     );
 }
