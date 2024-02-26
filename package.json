@@ -1,7 +1,6 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,5 +15,14 @@
     "mongodb": "^6.0.0",
     "mongoose": "^8.1.3",
     "nodemon": "^3.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhyparamaraeva2/todo-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zhyparamaraeva2/todo-server/issues"
+  },
+  "homepage": "https://github.com/zhyparamaraeva2/todo-server#readme",
+  "description": ""
 }
