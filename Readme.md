@@ -4,5 +4,6 @@ Node version 16.20.2
 
 Commands to run the project:
 
-`npm init` 
-`npm start` 
+    `"npm start": "nodemon index.js"`
+
+   ` "npm test": "mocha test"`
